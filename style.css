@@ -1,0 +1,309 @@
+/* Header cập nhật - Giữ nguyên */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.shop-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f39c12;
+    margin: 0;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    margin-left: 2rem;
+}
+
+.search-box {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.header-right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.header-right ul li {
+    margin-left: 1rem;
+    position: relative;
+}
+
+.header-right ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background 0.3s;
+}
+
+.header-right ul li a:hover {
+    background-color: #000000;
+}
+
+details {
+    position: relative;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: white;
+    transition: background 0.3s;
+}
+
+summary:hover {
+    background-color: #000000;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::marker {
+    display: none;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    min-width: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 0;
+}
+
+details[open] .submenu {
+    display: grid;
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    display: block;
+    padding: 0.75rem;
+    color: rgb(255, 0, 0);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.submenu li a:hover {
+    background-color: #0080ff;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-center {
+        margin: 1rem 0;
+        max-width: none;
+    }
+    .header-right ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .submenu {
+        position: static;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, auto);
+        min-width: auto;
+    }
+}
+section h3 {
+    text-align: left; 
+    margin-right: 2rem; 
+    font-size: 2.5rem; 
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Thêm gap 15px để card không quá sát nhau */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bố cục cho mỗi card - Giảm min-width để thu nhỏ */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-width: 200px; /* Giảm từ 240px xuống 200px để card hẹp hơn */
+}
+
+/* Ảnh ở trên - Giảm width và thêm max-width để thu nhỏ */
+.thumb img {
+    width: 60%; /* Giảm từ 75% xuống 60% */
+    height: auto;
+    max-width: 180px; /* Thêm max-width 180px để giới hạn tuyệt đối */
+    display: block;
+    margin: 0 auto; /* Căn giữa */
+}
+
+/* Card body: bố trí dọc - Giảm padding để chặt chẽ hơn */
+.card-body {
+    padding: 8px; /* Giảm từ 10px xuống 8px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tên truyện: căn giữa - Giảm font size */
+.title {
+    text-align: center;
+    margin: 8px 0; /* Giảm margin từ 10px xuống 8px */
+    font-size: 16px; /* Giảm từ 18px xuống 16px */
+    font-weight: bold;
+}
+
+/* Tags: chia thành 2 dòng, mỗi dòng 2 tag - Giảm gap và font */
+.tags {
+    width: 100%;
+    margin: 8px 0; /* Giảm margin từ 10px xuống 8px */
+}
+
+.tag-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Giảm từ 10px xuống 8px */
+    margin-bottom: 4px; /* Giảm từ 5px xuống 4px */
+}
+
+.tag {
+    background-color: #f0f0f0;
+    padding: 4px 8px; /* Giảm padding từ 5px 10px xuống 4px 8px */
+    border-radius: 4px;
+    font-size: 12px; /* Giảm từ 14px xuống 12px */
+    color: #333;
+}
+
+/* Buttons: 2 nút trên cùng 1 dòng - Giảm gap và padding */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Giảm từ 10px xuống 8px */
+    margin-top: 8px; /* Giảm từ 10px xuống 8px */
+}
+
+.btn-read, .btn-add {
+    padding: 6px 12px; /* Giảm từ 8px 15px xuống 6px 12px */
+    border: none;
+    border-radius: 4px;
+    font-size: 12px; /* Giảm từ 14px xuống 12px */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-read {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-read:hover {
+    background-color: #0056b3;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #1e7e34;
+}
+
+/* Ẩn hoặc tùy chỉnh phần meta cũ nếu không cần */
+.meta {
+    display: none;
+}
+
+/* Footer - Giữ nguyên */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #f39c12;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    margin: 0;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer-section {
+        max-width: none;
+    }
+}
